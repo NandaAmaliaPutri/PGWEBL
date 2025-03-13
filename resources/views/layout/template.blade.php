@@ -28,6 +28,8 @@
     </script>
 
     @yield('scripts')
+
+    @include('component.toast')
 </body>
 
 </html>
