@@ -21,7 +21,6 @@
 @endif
 
 @if (session()->has('error'))
-
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
 <div class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true" id="liveToastError">
     <div class="d-flex">
@@ -63,5 +62,4 @@
 
     toast.show()
 </script>
-
 @endif
