@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class PolygonController extends Controller
 {
-    
+
     public function __construct()
     {
         $this->polygon = new PolygonModel();
@@ -39,7 +39,8 @@ class PolygonController extends Controller
             [
                 'name' => 'required|unique:polygon,name',
                 'description' => 'required',
-                'geom_polygon' => 'required'
+                'geom_polygon' => 'required',
+                'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:50'
             ],
             [
                 'name.required' => 'Name is required',
@@ -49,11 +50,26 @@ class PolygonController extends Controller
             ]
         );
 
+        // Create images directory if not exsist
+        if (!is_dir('storage/images')) {
+            mkdir('./storage/images', 0777);
+        }
+
+        // Get image file
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $name_image = time() . "_polygon." . strtolower($image->getClientOriginalExtension());
+            $image->move('storage/images', $name_image);
+        } else {
+            $name_image = null;
+        }
+
 
         $data = [
             'geom' => $request->geom_polygon,
             'name' => $request->name,
             'description' => $request->description,
+            'images' => $name_image,
         ];
 
         // Create data

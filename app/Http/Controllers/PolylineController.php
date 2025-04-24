@@ -38,7 +38,8 @@ class PolylineController extends Controller
             [
                 'name' => 'required|unique:polyline,name',
                 'description' => 'required',
-                'geom_polyline' => 'required'
+                'geom_polyline' => 'required',
+                'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:50'
             ],
             [
                 'name.required' => 'Name is required',
@@ -48,11 +49,26 @@ class PolylineController extends Controller
             ]
         );
 
+        // Create images directory if not exsist
+        if (!is_dir('storage/images')) {
+            mkdir('./storage/images', 0777);
+        }
+
+        // Get image file
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $name_image = time() . "_polyline." . strtolower($image->getClientOriginalExtension());
+            $image->move('storage/images', $name_image);
+        } else {
+            $name_image = null;
+        }
+
 
         $data = [
             'geom' => $request->geom_polyline,
             'name' => $request->name,
             'description' => $request->description,
+            'images' => $name_image,
         ];
 
         // Create data
