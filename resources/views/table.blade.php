@@ -1,48 +1,35 @@
 @extends('layout.template')
 
 @section('content')
-<div class="container">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>NIM</th>
-                <th>Kelas</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Nanda</td>
-                <td>111</td>
-                <td>B</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Amalia</td>
-                <td>112</td>
-                <td>B</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Putri</td>
-                <td>113</td>
-                <td>B</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Arum</td>
-                <td>114</td>
-                <td>B</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Amel</td>
-                <td>115</td>
-                <td>B</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Images</th>
+                    <th>Created At</th>
+                    <th>Updated At</th>
+                </tr>
+            </thead>
+            <tbody>
+                //loop points data
+                @foreach ($points as $p)
+                    <tr>
+                        <td>{{ $p->id }}</td>
+                        <td>{{ $p->name }}</td>
+                        <td>{{ $p->description }}</td>
+                        <td>
+                            <img src="{{ asset('storage/images/' . $p->images) }}" alt="" width="200"
+                                title="{{ $p->images }}">
+                        </td>
+                        <td>{{ $p->created_at }}</td>
+                        <td>{{ $p->updated_at }}</td>
+                    </tr>
+                @endforeach
+
+            </tbody>
+        </table>
+    </div>
 @endsection
