@@ -74,6 +74,7 @@ class PolygonController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'images' => $name_image,
+            'user_id' => auth()->user()->id
         ];
 
         // Create data

@@ -270,7 +270,9 @@
                     "<button type='submit' class='btn btn-sm btn-danger' onClick=\"return confirm('Yakin akan dihapus?')\">" +
                     "<i class='fa-solid fa-trash-can'></i>" +
                     "</button>" +
-                    "</form>";
+                    "</form>" +
+                    "<br>" +
+                    "<p>Dibuat oleh: " + feature.properties.user_created + "</p>";
 
                 // Event pada setiap layer/fitur
                 layer.on({
@@ -317,7 +319,9 @@
                     "<button type='submit' class='btn btn-sm btn-danger' onClick=\"return confirm('Yakin akan dihapus?')\">" +
                     "<i class='fa-solid fa-trash-can'></i>" +
                     "</button>" +
-                    "</form>";
+                    "</form>"+
+                    "<br>" +
+                    "<p>Dibuat oleh: " + feature.properties.user_created + "</p>";
 
                 layer.on({
                     click: function(e) {
@@ -360,7 +364,9 @@
                     "<button type='submit' class='btn btn-sm btn-danger' onClick=\"return confirm('Yakin akan dihapus?')\">" +
                     "<i class='fa-solid fa-trash-can'></i>" +
                     "</button>" +
-                    "</form>";
+                    "</form>" +
+                    "<br>" +
+                    "<p>Dibuat oleh: " + feature.properties.user_created + "</p>";
 
                 layer.on({
                     click: function(e) {
