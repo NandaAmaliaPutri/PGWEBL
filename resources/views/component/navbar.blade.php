@@ -9,7 +9,6 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 @auth
-
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-house"></i>
                             Beranda</a>
@@ -32,7 +31,6 @@
                             <li><a class="dropdown-item" href="{{ route('api.polygon') }}" target="_blank">Polygons</a></li>
                         </ul>
                     </li>
-
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <form action="{{ route('logout') }}" method="POST">
@@ -44,7 +42,6 @@
                         </li>
                     </ul>
                 @endauth
-
 
                 @guest
                     <li class="nav-item">

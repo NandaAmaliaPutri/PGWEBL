@@ -22,6 +22,8 @@ public function index()
         $data = [
             'title' => 'Table',
             'points' => $this->points->all(),
+            'polylines' => $this->polyline->all(),
+            'polygons' => $this->polygon->all(),
         ];
 
         return view('table', $data);
