@@ -46,7 +46,7 @@ class PointsController extends Controller
                 'name' => 'required|unique:points,name',
                 'description' => 'required',
                 'geom_point' => 'required',
-                'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:50',
+                'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:25000',
             ],
             [
                 'name.required' => 'Name is required',
@@ -122,7 +122,7 @@ class PointsController extends Controller
                 'name' => 'required|unique:points,name,' . $id,
                 'description' => 'required',
                 'geom_point' => 'required',
-                'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:50',
+                'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:25000',
             ],
             [
                 'name.required' => 'Name is required',
