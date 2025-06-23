@@ -1,4 +1,4 @@
-# 🌍 PGWEBL - Explore GunungKidul
+# 🌍 Explore GunungKidul
 
 **PGWEBL** (Platform Geospasial Web Gunungkidul) adalah sebuah platform **WebGIS (Web Geographic Information System)** yang menyajikan informasi spasial mengenai persebaran objek wisata di Kabupaten Gunungkidul, Yogyakarta.  
 Melalui peta interaktif, pengguna dapat menjelajahi lokasi-lokasi wisata seperti pantai, goa, air terjun, bukit, dan destinasi alam lainnya secara visual dan informatif.
